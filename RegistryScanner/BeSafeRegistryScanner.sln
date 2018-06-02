@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSafeRegistryScanner", "BeSafeRegistryScanner\BeSafeRegistryScanner.csproj", "{3985B9AA-3000-4763-9439-330590D26DDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3985B9AA-3000-4763-9439-330590D26DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3985B9AA-3000-4763-9439-330590D26DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3985B9AA-3000-4763-9439-330590D26DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3985B9AA-3000-4763-9439-330590D26DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B025C6A-55DD-4858-9E32-787706D81970}
+	EndGlobalSection
+EndGlobal
