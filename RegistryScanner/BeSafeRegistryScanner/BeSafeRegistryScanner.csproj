@@ -11,6 +11,7 @@
     <AssemblyName>BeSafeRegistryScanner</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PluginSDK">
-      <HintPath>..\..\BeSafe\PluginSDK\bin\Debug\PluginSDK.dll</HintPath>
+    <Reference Include="PluginSDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BeSafe\PluginSDK\bin\Debug\PluginSDK.dll</HintPath>
     </Reference>
     <Reference Include="SharedTypes">
       <HintPath>..\..\BeSafe\SharedTypes\bin\Debug\SharedTypes.dll</HintPath>

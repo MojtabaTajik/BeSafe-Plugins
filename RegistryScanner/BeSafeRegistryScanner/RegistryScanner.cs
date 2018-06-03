@@ -3,11 +3,12 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using PluginSDK;
 using BeSafeRegistryScanner.Scanners;
+using PluginSDK.PluginInterfaces;
 using SharedTypes.Watchers.RegistryWatcherTypes;
 
 namespace BeSafeRegistryScanner
 {
-    public class RegistryScanner : IBeSafePlugin
+    public class RegistryScanner : IBeSafeRegistryPlugin
     {
         private PluginInfo _pluginInfo;
 
@@ -33,37 +34,20 @@ namespace BeSafeRegistryScanner
             return _pluginInfo;
         }
 
-        public PluginResult ScanFile(dynamic parameters, bool canFightWithThreat)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PluginResult ScanModule(dynamic parameters, bool canFightWithThreat)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PluginResult ScanProcess(dynamic parameters, bool canFightWithThreat)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PluginResult ScanRegistry(dynamic parameters, bool canFightWithThreat)
+        public PluginResult Scan(ChangedValueInfo registryKeyInfo, bool canFightWithThreat)
         {
             try
             {
-                ChangedValueInfo regitryValueInfo = (ChangedValueInfo)parameters;
-
                 PluginResult result = new PluginResult
                 {
                     PluginInfo = _pluginInfo,
-                    ScannedObject = parameters,
+                    ScannedObject = registryKeyInfo,
                     RiskRate = ThreatRiskRates.NoRisk,
                 };
 
                 foreach (IScanner scanner in _scanners)
                 {
-                    PluginResult tempResut = new ConstantScanner().Scan(regitryValueInfo);
+                    PluginResult tempResut = new ConstantScanner().Scan(registryKeyInfo);
 
                     // On first threat found return the threat and ignore other scanners
                     if (tempResut.RiskRate != ThreatRiskRates.NoRisk)
