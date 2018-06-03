@@ -1,31 +1,31 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Reflection;
 using PluginSDK;
+using PluginSDK.PluginInterfaces;
 
 namespace BeSafeExecutableScanner
 {
-    public class ExecutableScanner : IBeSafePlugin
+    public class ExecutableScanner : IBeSafeFilePlugin
     {
+        private PluginInfo _pluginInfo;
+
         public PluginInfo GetPluginInfo()
         {
-            throw new NotImplementedException();
+            Assembly assembly = Assembly.GetExecutingAssembly();
+
+            _pluginInfo = new PluginInfo
+            {
+                Name = "Executable Scanner",
+                Type = PluginType.File,
+                Version = new Version(FileVersionInfo.GetVersionInfo(assembly.Location).FileVersion),
+                Description = ".exe,.dll,.scr"
+            };
+
+            return _pluginInfo;
         }
 
-        public PluginResult ScanFile(dynamic parameters, bool canFightWithThreat)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PluginResult ScanRegistry(dynamic parameters, bool canFightWithThreat)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PluginResult ScanProcess(dynamic parameters, bool canFightWithThreat)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PluginResult ScanModule(dynamic parameters, bool canFightWithThreat)
+        public PluginResult Scan(string filePath, bool canFightWithThreat)
         {
             throw new NotImplementedException();
         }

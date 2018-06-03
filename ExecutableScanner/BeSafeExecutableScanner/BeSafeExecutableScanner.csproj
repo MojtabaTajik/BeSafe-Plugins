@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PluginSDK">
-      <HintPath>..\..\BeSafe\PluginSDK\bin\Debug\PluginSDK.dll</HintPath>
+    <Reference Include="PluginSDK, Version=1.13.154.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BeSafe\PluginSDK\bin\Debug\PluginSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
