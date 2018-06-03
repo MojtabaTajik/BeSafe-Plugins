@@ -10,10 +10,10 @@ namespace BeSafeRegistryScanner
 {
     public class RegistryScanner : IBeSafeRegistryPlugin
     {
-        private PluginInfo _pluginInfo;
+        private readonly PluginInfo _pluginInfo;
 
 
-        private List<IScanner> _scanners = new List<IScanner>
+        private readonly List<IScanner> _scanners = new List<IScanner>
         {
             new ConstantScanner(),
         };
@@ -47,7 +47,7 @@ namespace BeSafeRegistryScanner
 
                 foreach (IScanner scanner in _scanners)
                 {
-                    PluginResult tempResut = new ConstantScanner().Scan(registryKeyInfo);
+                    PluginResult tempResut = scanner.Scan(registryKeyInfo);
 
                     // On first threat found return the threat and ignore other scanners
                     if (tempResut.RiskRate != ThreatRiskRates.NoRisk)
